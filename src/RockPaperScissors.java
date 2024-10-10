@@ -8,10 +8,10 @@ public class RockPaperScissors {
         String[] CPUPool = {"R","P","S"};
         String CPUPlay;
         String UserPlay;
-        int yesno;
 
         do{
-            System.out.println("(R)ock, (P)aper, or (S)cissors?");
+            System.out.println();
+            System.out.println("(R)ock, (P)aper, or (S)cissors? (Q to quit)");
             UserPlay = in.next();
             in.nextLine();
             int randomNumber = random.nextInt(CPUPool.length);
@@ -82,8 +82,12 @@ public class RockPaperScissors {
                     }
                 }
             }
+            else if(UserPlay.equalsIgnoreCase("Q")){
+                System.out.println("Goodbye!");
+                done = true;
+            }
             else{
-                System.out.println("The input you entered is invalid");
+                System.out.println("The input you entered is invalid.");
                 UserPlay = "";
             }
         }while(!done);
